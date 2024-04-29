@@ -7,15 +7,15 @@ The Pegasys Oracle Adapter is a Solidity smart contract designed to convert pric
 Clone the repository and install its dependencies:
 
 ```bash
-git clone https://yourrepositoryurl.git
-cd path-to-your-project
+git clone https://github.com/pegasys-fi/pegasys-oracle-adatpter.git
+cd pegasys-oracle-adatpter
 yarn install
 ```
 
 ## Deployment
 
-To deploy the oracle adapters, you can use the provided script which automates the deployment of contracts for various predefined currency pairs:
+To deploy the Oracle adapters, you can use the provided script which automates the deployment of contracts for various predefined currency pairs:
 
 ```bash
-npx hardhat run scripts/deploy.js
+npx hardhat run scripts/deployOracles.ts
 ```
