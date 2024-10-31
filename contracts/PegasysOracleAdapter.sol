@@ -15,7 +15,7 @@ contract PegasysOracleAdapter {
 
     /// @notice The number of decimal places to standardize the price to
     /// @dev Chainlink uses 8 decimal places in its price feeds
-    uint8 public constant BASE_UNIT = 8;
+    uint8 public immutable decimals = 8;
 
     /// @notice Creates a new PegasysOracleAdapter
     /// @param supraFeed_ The address of the SupraSValueFeed oracle
@@ -43,10 +43,10 @@ contract PegasysOracleAdapter {
         uint256 price,
         uint8 srcDecimals
     ) internal pure returns (int256) {
-        if (BASE_UNIT > srcDecimals) {
-            price = price * (10 ** (BASE_UNIT - srcDecimals));
-        } else if (BASE_UNIT < srcDecimals) {
-            price = price / (10 ** (srcDecimals - BASE_UNIT));
+        if (decimals > srcDecimals) {
+            price = price * (10 ** (decimals - srcDecimals));
+        } else if (decimals < srcDecimals) {
+            price = price / (10 ** (srcDecimals - decimals));
         }
         return int256(price);
     }

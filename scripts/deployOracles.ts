@@ -4,7 +4,6 @@ async function main() {
 
     const supraFeed = "0xbc0453F6FAC74FB46223EA5CC55Bd82852f0C670";
     const indexes = [
-        54, //DAI_USD
         89, //USDC_USD
         48, //USDT_USD
         18, //BTC_USD
@@ -12,7 +11,6 @@ async function main() {
         94, //SYS_USDT
     ];
     const names = [
-        "DAI_USD",
         "USDC_USD",
         "USDT_USD",
         "BTC_USD",
